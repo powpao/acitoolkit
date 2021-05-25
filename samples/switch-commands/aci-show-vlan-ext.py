@@ -43,7 +43,7 @@ def show_vlan_brief(apic, node_ids):
             output_data.append((l2bd_id, l2bd_name, l2bd_admin_state, ports))
         output_data.sort(key=lambda tup: tup[0])
         print('Switch:', node_id)
-        print tabulate(output_data, headers=["VLAN", "Name", "Status", "Ports"])
+        print (tabulate(output_data, headers=["VLAN", "Name", "Status", "Ports"]))
 
 
 def show_vlan_info(apic, node_ids):
@@ -67,7 +67,7 @@ def show_vlan_info(apic, node_ids):
             data.append((int(l2bd_attr['id']), 'enet', str(l2bd_attr['mode']), encap))
         data.sort(key=lambda tup: tup[0])
         print('Switch:', node_id)
-        print tabulate(data, headers=["VLAN", "Type", "Vlan-mode", "Encap"])
+        print (tabulate(data, headers=["VLAN", "Type", "Vlan-mode", "Encap"]))
 
 
 def get_node_ids(apic, args):
